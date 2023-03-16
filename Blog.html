@@ -12,7 +12,7 @@
 <body>
     <div class="border-8">
         <div class="text-center text-2xl mt-3">
-            <h1 class="text-3xl">1.Difference between map, filter, forEach, find</h1>
+            <h1 class="text-3xl mb-3">1.Difference between map, filter, forEach, find</h1>
             <p class="mt-4 py-2"><b>.map()</b> is a lot like .forEach(), but it very helpfully creates and returns a new
                 array as the
                 below
@@ -23,44 +23,119 @@
                 }); <br>
                 console.log(doubledNums);</code>
             </p>
-        </div>
-        <div class="text-center text-2xl mt-3">
-            <h1 class="text-3xl">2.Difference of Cookies storage, Session storage and local storage difference</h1>
-            <p class="mt-4 py-2"><b>.map()</b> is a lot like .forEach(), but it very helpfully creates and returns a new
-                array as the
-                below
-                example shows: <br>
-                <code class="text-red-700">const nums = [1, 2, 3, 4, 5]; <br>               
-                const doubledNums = nums.map((num) => {
-                return num * 2;
-                }); <br>
-                console.log(doubledNums);</code>
+
+            <p class="mt-4 py-2"><b>.filter()</b> method allows users to filter data. In JavaScript, it
+                provides a means to filter values through an array,
+                iterating over the values; that exist within a variable. It returns only those values that meet specific
+                criteria into a
+                new JS array. <br>
+                <code class="text-red-700">let num = [3, 6, 7, 12, 18, 23, 44, 62, 81]; <br>
+                
+                let even_num = num.filter(function(item){ <br>
+                
+                return item % 2 == 0; }); <br>
+                
+                console.log(even_num);<br>
+            Output: [6, 12, 18, 44, 62]
+        </code>
+            </p>
+
+            <p class="mt-4 py-2"><b>.forEach()</b> array method loops over the array, passing each item in the array
+                into the callback function provided. Unlike a regular for loop, .forEach() method does not provide a way
+                to terminate iteration before all elements have been passed to the function. <br>
+                <code class="text-red-700">Finding the sum of an array:
+                
+                const values = [7, 17, 34, 41, 22, 5]; <br>
+                let sumOfValues = 0; <br>
+                 
+                values.forEach((value) => (sumOfValues += value)); <br>
+                
+                console.log(sumOfValues); <br>
+                Output: 126 </code>
+            </p>
+
+            <p class="mt-4 py-2"><b>.find()</b> method works on a given condition. Doesn't alter the original array <br>
+                <code class="text-red-700">Finding the sum of an array:
+                            
+                            const array1 = [1125, 212, 800, 1230, 1144];
+                            
+                            const found = array1.find(element => element > 1200);
+                            
+                            console.log(found);
+                            Output: 1230 </code>
             </p>
         </div>
         <div class="text-center text-2xl mt-3">
-            <h1 class="text-3xl">3.Difference between map, filter, forEach, find</h1>
-            <p class="mt-4 py-2"><b>.map()</b> is a lot like .forEach(), but it very helpfully creates and returns a new
-                array as the
-                below
-                example shows: <br>
-                <code class="text-red-700">const nums = [1, 2, 3, 4, 5]; <br>               
-                const doubledNums = nums.map((num) => {
-                return num * 2;
-                }); <br>
-                console.log(doubledNums);</code>
+            <h1 class="text-3xl">2.Difference of Cookies storage, Session storage and local storage</h1>
+            <p class="mt-4 py-2"><b>Cookies Storage:</b> Cookies are small text files that websites can store on a
+                user's computer. They are often used to store user
+                preferences, login credentials, and other data that needs to persist across multiple visits to a
+                website. Cookies have
+                an expiration date and time, and they can be set to expire when the user closes their browser or after a
+                certain number
+                of days.
+            </p> <br>
+            <p class="mt-4 py-2"><b>Session Storage:</b> Session Storage is a storage mechanism that allows web
+                applications to store data during a user's session. Session data
+                is stored on the client side and is only accessible within the same browser tab or window. Once the user
+                closes the tab
+                or window, the session data is deleted.
+            </p> <br>
+            <p class="mt-4 py-2"><b>Local Storage:</b> Local Storage is a storage mechanism that allows
+                web applications to store data persistently on a user's
+                computer. Data stored in local storage is not deleted when the user closes their browser or shuts down
+                their computer.
+                Local Storage is accessible across different tabs and windows, and even across different browser
+                sessions.
+            </p> <br>
+        </div>
+        <div class="text-center text-2xl mt-3">
+            <h1 class="text-3xl">3.What is event loop and how does it work?</h1>
+            <p class="mt-4 py-2"><b>Event Loop:</b> is a mechanism in JavaScript that manages the execution of
+                asynchronous code by allowing the program to
+                perform other tasks while waiting for a long-running operation to complete. It works by continuously
+                checking a queue of
+                tasks, and executing the next task in the queue when the current task is finished. Here's an example of
+                it<br>
+                <code class="text-red-700">console.log('start'); <br>               
+                setTimeout(() => { <br>
+                console.log("Async Task"); <br>
+                }, 2000); <br>
+            console.log('end'); <br></code>
+                In this code, we first log "start" to the console, then schedule an asynchronous task using the
+                setTimeout() function.
+                This function takes a callback function and a time delay in milliseconds as arguments, and schedules the
+                callback to be
+                executed after the specified delay. In this case, we're scheduling the callback to be executed after a
+                2-second delay.
+
+                After scheduling the asynchronous task, we log "end" to the console. When we run this code, we'll see
+                "start" and "end"
+                logged to the console immediately, and then the program will wait for 2 seconds before logging "Async
+                Task" to the
+                console. This is because the setTimeout() function schedules the callback to be executed asynchronously,
+                meaning that it
+                will be added to the event queue and executed only when the current task (logging "end") is finished.
             </p>
         </div>
         <div class="text-center text-2xl mt-3">
-            <h1 class="trext-3xl">4.Explain quizTimer() and chooseQuiz() function</h1>
-            <p class="mt-4 py-2"><b>.map()</b> is a lot like .forEach(), but it very helpfully creates and returns a new
-                array as the
-                below
-                example shows: <br>
-                <code class="text-red-700">const nums = [1, 2, 3, 4, 5]; <br>               
-                const doubledNums = nums.map((num) => {
-                return num * 2;
-                }); <br>
-                console.log(doubledNums);</code>
+            <h1 class="trext-3xl">4. Explain <b>quizTimer()</b> and <b>chooseQuiz()</b>function</h1>
+            <p class="mt-4 py-2"><b>quizTimer():</b> This function creates a timer for quiz when start quiz button is
+                clicked. Takes boolean arguments named dismiss, If it's true then clears the timer and returns nothing.
+                Otherwise setInterval() timer executes the function with 1 interval. If the count variable reaches 60
+                seconds or more, the code alternates between adding and removing CSS classes on the
+                "count" element to create a flashing effect.
+            </p>
+            <p class="mt-4 py-2"><b>chooseQuiz()():</b> This function has two arguments which are called when user is
+                answering questions. Where <em>index</em> denoting which question is user answering and givenAns is
+                about which answer is user picking. The function first checks whether the user has already answered the
+                current question by searching through an array
+                called answers. If the user has already answered the question, the function updates the existing answer
+                with the new
+                one. If the user has not answered the question before, the function adds a new object to the answers
+                array with the
+                details of the question and the answer. At final stage this function calls displayAnswers() function to
+                update the UI with answers.
             </p>
         </div>
     </div>
