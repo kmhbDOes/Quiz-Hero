@@ -109,10 +109,10 @@ document.querySelector("#submit").addEventListener("click", () => {
   }
 
   // data setting on local storage and getting data from local storage
-  let storage = JSON.parse(localStorage.getItem("result"));
+  let storage = JSON.parse(localStorage.getItem("results"));
   if (storage) {
     localStorage.setItem(
-      "result",
+      "results",
       JSON.stringify([
         ...storage,
         {
@@ -124,7 +124,7 @@ document.querySelector("#submit").addEventListener("click", () => {
     );
   } else {
     localStorage.setItem(
-      "result",
+      "results",
       JSON.stringify([
         {
           marks: totalMark,
@@ -182,22 +182,4 @@ document.querySelector("#submit").addEventListener("click", () => {
     clearTimeout(x);
   }, 1500);
   window.scrollTo(0, 0);
-});
-
-
-let previousResults = JSON.parse(localStorage.getItem('previousResults')) || [];
-
-// Add new result to previous results array
-previousResults.push(result);
-
-// Stringify and store the updated previous results array in LocalStorage
-localStorage.setItem('previousResults', JSON.stringify(previousResults));
-
-// Display all previous results in a list
-const previousResultsList = document.querySelector('#previous-results');
-previousResultsList.innerHTML = '';
-previousResults.forEach((previousResult) => {
-  const listItem = document.createElement('li');
-  listItem.textContent = previousResult;
-  previousResultsList.appendChild(listItem);
 });
